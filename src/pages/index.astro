@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { amethyst , coolgray, ultraviolet} from "../colors.js"
+
+---
+
+<Layout title="Orphan Waves">
+		
+		<header>
+				<img src="./assets/logo.jpg"></img>
+		</header>
+	<div id="album">
+			<h2>New Album Out Now!!</h2>
+				<img src="./assets/persona_small.jpeg"></img>
+	</div>	
+		<div id="gigs">
+				<h2>Gigs</h2>
+				
+				<h3>COMING</h3> 
+
+				<br/>Pääsiäisjamit 2024 KLA 30.3.2024
+				<br/>Bar 15 SJK 2.2.2024
+				<br/>Bar Kilta KLA 1.2.2024
+				<br/>Hard Rock House HKI 27.1.2024
+
+
+				<h3>GONE</h3> 
+
+				<br/>Bar Loose HKI 4.1.2024
+				<br/>Playhouse Bar HKI 30.11.2023
+				<br/>Hard Rock House HKI 12.10.2023 	
+				<br/>Playhouse Bar HKI 4.10.2023
+				<br/>Bar Loose HKI 10.5.2023
+				<br/>Lepakkomies HKI 19.4.2023
+				<br/>Humina Tila HKI 18.3 2023
+				<br/>Musta Kissa HKI 28.10.2022
+				<br/>Pääsiäisjamit 2022 KLA 16.4.2022
+				<br/>Hard Rock House HKI 25.3.2022
+				<br/>Hard Rock Cafe HKI 11.3.2022
+				<br/>Musta Kissa HKI 10.12.2021
+				<br/>West Coast Billiard KLA 26.8.2021
+		</div>
+
+		<div id="contact">
+				Contact us at: orphanwaves@gmail.com
+		</div>
+</Layout>
+
+<style define:vars={{amethyst, coolgray, ultraviolet}}>
+		body {
+				margin:0;
+				display:flex;
+				flex-direction: column;
+				text-align:center;
+		}
+		header {
+				background-color:white;
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 3em;
+		}
+		header img{
+				padding:0;
+				margin: 0;
+				max-height: 6em;
+		}
+
+		#album{
+				color: var(--ultraviolet);
+				min-height:100vh;
+				margin: auto;
+				max-width: calc(100% - 2rem);
+		}
+		#album h2{
+				text-align:center;}
+		#album img{
+				height:100vh;
+		}
+
+		#gigs{
+				text-align:center;
+				margin: 2em 0em;
+				padding-bottom: 5em ;
+				color: whitesmoke;
+				background-color: var(--ultraviolet)
+		}
+		
+		#contact{
+				display:flex;
+				color: black;
+				justify-content: center;
+				align-items: center;
+				min-height: 25vh;
+		}
+	}
+</style>
