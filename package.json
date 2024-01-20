@@ -1,17 +1,19 @@
 {
-  "name": "orphan-waves",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "orphan_waves_webpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@astrojs/check": "^0.4.1",
-    "astro": "^4.1.2",
-    "typescript": "^5.3.3"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marwwin/orphan_waves_webpage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marwwin/orphan_waves_webpage/issues"
+  },
+  "homepage": "https://github.com/Marwwin/orphan_waves_webpage#readme"
 }
