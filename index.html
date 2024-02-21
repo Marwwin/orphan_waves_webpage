@@ -1,114 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Orphan Waves" />
+    <meta name="description" content="Orphan waves band webpage" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Orphan Waves</title>
+    <link rel="stylesheet" href="style.css" />
+    <style src="style.css"></style>
+    <script src="./htmx.min.js"></script>
   </head>
-  <header>
-    <img src="./assets/logo.png" />
-  </header>
-
   <body>
-    <div id="album">
-      <h2>New Album Out Now!!</h2>
-      <img src="./assets/persona_small.jpeg" />
-    </div>
-    <div id="gigs">
+    <header>
+      <img src="./assets/logo_white.png" />
+    </header>
+    <section id="album" style="">
+      <h2>New EP "Persona" Out Now!</h2>
+      <img id="persona_album" src="./assets/persona_small.jpeg" />
+      <div id="album_links">
+        <a
+          href="https://open.spotify.com/album/6QW6mXroON0hVTL11Cs1W3?si=Ral12uJJSRm6-NhLUU7G4Q"
+          ><img id="spotify_logo" src="./assets/Spotify_Logo_CMYK_White.png"
+        /></a>
+        <a
+          href="https://youtube.com/playlist?list=OLAK5uy_ljdsq_2qV6PJRS0HjoIgHeiPVklb_qROY&si=TnnYfR7aE1RUYK_k"
+        >
+          <img id="youtube_logo" src="assets/yt_logo_mono_dark.png"
+        /></a>
+      </div>
+    </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Orphan Waves is an experimental alt-rock outfit based in Helsinki
+        Finland that enjoys balancing between atmospheric floatiness and
+        energetic fireworks. The band consists of
+        <span class="band_member">Markku Essel</span> (guitar & vocals),
+        <span class="band_member">Markus Kankkonen</span> (bass, synth & backing
+        vocals) and <span class="band_member">Janne Aspvik</span> (drums).
+      </p>
+    </section>
+    <section id="instagram_feed"></section>
+
+    <section id="gigs">
       <h2>Gigs</h2>
-
       <h3>COMING</h3>
-
-      <br />Pääsiäisjamit 2024 KLA 30.3.2024 <br />Bar 15 SJK 2.2.2024 <br />Bar
-      Kilta KLA 1.2.2024 <br />Hard Rock House HKI 27.1.2024
-
+      <div class="gig">
+        <span class="place">Pääsiäisjamit 2024 KLA </span
+        ><span class="time">30.3.2024</span>
+      </div>
       <h3>GONE</h3>
-
-      <br />Bar Loose HKI 4.1.2024 <br />Playhouse Bar HKI 30.11.2023 <br />Hard
-      Rock House HKI 12.10.2023 <br />Playhouse Bar HKI 4.10.2023 <br />Bar
-      Loose HKI 10.5.2023 <br />Lepakkomies HKI 19.4.2023 <br />Humina Tila HKI
-      18.3 2023 <br />Musta Kissa HKI 28.10.2022 <br />Pääsiäisjamit 2022 KLA
-      16.4.2022 <br />Hard Rock House HKI 25.3.2022 <br />Hard Rock Cafe HKI
-      11.3.2022 <br />Musta Kissa HKI 10.12.2021 <br />West Coast Billiard KLA
-      26.8.2021
-    </div>
-
-    <div id="contact">Contact us at: orphanwaves@gmail.com</div>
+      <div class="gig">
+        <span class="place">Bar 15 SJK </span><span class="time">2.2.2024</span>
+      </div>
+      <div class="gig">
+        <span class="place">Bar Kilta KLA </span
+        ><span class="time">1.2.2024</span>
+      </div>
+      <div class="gig">
+        <span class="place">Hard Rock House HKI </span
+        ><span class="time">27.1.2024</span>
+      </div>
+      <div class="gig">
+        <span class="place">Bar Loose HKI </span
+        ><span class="time">4.1.2024</span>
+      </div>
+      <div class="gig">
+        <span class="place">Playhouse Bar HKI </span
+        ><span class="time">30.11.2023</span>
+      </div>
+      <div class="gig">
+        <span class="place">Hard Rock House HKI </span
+        ><span class="time">12.10.2023</span>
+      </div>
+      <div class="gig">
+        <span class="place">Playhouse Bar HKI </span
+        ><span class="time">4.10.2023</span>
+      </div>
+      <div class="gig">
+        <span class="place">Bar Loose HKI </span
+        ><span class="time">10.5.2023</span>
+      </div>
+      <div class="gig">
+        <span class="place">Lepakkomies HKI </span
+        ><span class="time">9.4.2023</span>
+      </div>
+      <div class="gig">
+        <span class="place">Humina Tila HKI </span
+        ><span class="time">8.3.2023</span>
+      </div>
+      <div class="gig">
+        <span class="place">Musta Kissa HKI </span
+        ><span class="time">8.10.2022</span>
+      </div>
+      <div class="gig">
+        <span class="place">Pääsiäisjamit 2022 KLA </span
+        ><span class="time">16.4.2022</span>
+      </div>
+      <div class="gig">
+        <span class="place">Hard Rock House HKI </span
+        ><span class="time">25.3.2022</span>
+      </div>
+      <div class="gig">
+        <span class="place">Hard Rock Cafe HKI </span
+        ><span class="time">11.3.2022</span>
+      </div>
+      <div class="gig">
+        <span class="place">Musta Kissa HKI </span
+        ><span class="time">10.12.2021</span>
+      </div>
+      <div class="gig">
+        <span class="place">West Coast Billiard KLA</span>
+        <span class="time">26.8.2021</span>
+      </div>
+    </section>
+    <section id="contact">
+      <a class="mail_link" href="mailto: orphanwavestheband@gmail.com"
+        >orphanwavestheband@gmail.com</a
+      >
+      <div class="links_holder">
+        <div id="links">
+          <a
+            class="social_media_links no_text"
+            href="https://www.facebook.com/orphanwaves"
+          >
+            <img
+              class="logo"
+              id="facebook_logo"
+              src="assets/facebook-128.png"
+            />
+          </a>
+          <a
+            class="social_media_links no_text"
+            href="https://www.instagram.com/orphanwaves?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          >
+            <img class="logo" id="instagram_logo"
+            src="assets/Instagram_Glyph_White.png"
+          </a>
+          <a
+            class="social_media_links"
+            href="https://open.spotify.com/artist/10AMELBTubHzNTbHUGZhgo"
+            ><img class="logo" id="spotify_logo" src="./assets/spotify-128.png"
+          /></a>
+          <a
+            class="social_media_links"
+            href="https://www.youtube.com/@orphanwaves2298/featured"
+          >
+            <img
+              class="logo"
+              id="youtube_logo"
+              src="assets/yt_icon_mono_dark.png"
+          /></a>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
-<style>
-  :root {
-    --steel-pink: #db00c9ff;
-    --blue-violet: #8140bfff;
-    --pink-lavender: #ffcef8ff;
-    --hot-pink: #ff68b3ff;
-    --seasalt: #f7f7f7ff;
-
-    --grape: #7d35a5ff;
-    --rose-quartz: #a594b6ff;
-    --steel-pink: #be47cbff;
-    --lavender-web: #c9cbe0ff;
-    --seasalt: #f8f8f8ff;
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background: var(--blue-violet);
-    background-size: 224px;
-  }
-  body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  header {
-    background: linear-gradient(
-      50deg,
-      
-      #a594b6ff,
-      #c9cbe0ff
-    );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3em;
-  }
-  header img {
-    padding: 0;
-    margin: 0;
-    max-height: 6em;
-  }
-
-  #album {
-    min-height: 80vh;
-    margin: auto;
-    max-width: calc(80% - 2em);
-    padding-bottom: 3em;
-  }
-  #album h2 {
-    text-align: center;
-  }
-  #album img {
-    height: 75vh;
-  }
-
-  #gigs {
-    text-align: center;
-    margin: 2em 0em;
-    padding-bottom: 5em;
-    color: whitesmoke;
-    background-color: var(--blue-violet);
-  }
-
-  #contact {
-    display: flex;
-    color: black;
-    justify-content: center;
-    align-items: center;
-    min-height: 25vh;
-    color: var(--pink-lavender);
-  }
-</style>

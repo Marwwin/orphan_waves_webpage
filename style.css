@@ -1,0 +1,183 @@
+:root {
+  --amethyst: #856fc0ff;
+  --coolgray: #8283a6ff;
+  --ultraviolet: #594582ff;
+  --plumbweb: #df8cd4ff;
+}
+
+@font-face {
+  font-family: "TimeBurner";
+  src: url("./assets/Timeburner-xJB8.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TimeBurner bold";
+  src: url("./assets/TimeburnerBold-peGR.ttf") format("truetype");
+}
+
+html {
+  font-family: "TimeBurner";
+}
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+header {
+  background: radial-gradient(
+    circle,
+    rgb(80, 62, 127) 0%,
+    rgb(132, 93, 157) 60%,
+    rgb(222, 161, 215) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header img {
+  padding: 0;
+  margin: 0;
+  max-height: 6em;
+  width: min(100vw, 26em);
+}
+
+h2 {
+  font-family: "TimeBurner bold";
+}
+h3 {
+  font-family: "TimeBurner bold";
+}
+
+#album {
+  color: whitesmoke;
+  background: radial-gradient(
+    circle,
+    rgb(80, 62, 127) 0%,
+    rgb(218, 144, 208) 80%,
+    rgb(238, 223, 238) 100%
+  );
+  padding: 4em 2em 8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#album h2 {
+  text-align: center;
+  font-size: xxx-large;
+}
+
+#album_links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#album_links #spotify_logo {
+  width: 5em;
+  padding: 2em;
+}
+
+#album_links #youtube_logo {
+  width: 5em;
+  padding: 2em;
+}
+
+#album #persona_album {
+  aspect-ratio: 1 / 1;
+  width: max(35vw, 20em);
+}
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em max(20vw, 4em);
+  color: whitesmoke;
+  background-color: var(--ultraviolet);
+  font-size: larger;
+}
+#about p {
+  width: min(94vw, 28em);
+}
+
+#about .band_member {
+  font-weight: bolder;
+  white-space: nowrap;
+}
+#gigs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 7em;
+  color: #f5f5f5;
+  background-color: var(--ultraviolet);
+}
+
+.gig {
+  display: flex;
+  justify-content: space-between;
+  width: min(94vw, 28em);
+  font-size: large;
+  font-weight: bolder;
+}
+
+#contact {
+  display: flex;
+  color: whitesmoke;
+  background-color: var(--amethyst);
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+  flex-direction: column;
+  padding-bottom: 2em;
+}
+#contact a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: x-large;
+}
+
+#contact #links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 380px){
+ #contact .mail_link {
+  margin-top: 1.5em;
+  white-space:nowrap;
+  font-size: 1em;
+}
+   
+}
+
+@media (max-width: 250px) {
+  #contact .social_media_links {
+    margin: 20%;
+  }
+  #contact #links {
+    flex-direction: column;
+  }
+}
+
+#contact .mail_link {
+  margin-top: 1.5em;
+  white-space:nowrap;
+}
+#contact .social_media_links {
+  display: flex;
+  width: 1.5em;
+  margin: 10%;
+}
+
+#contact .logo {
+  width: inherit;
+}
+#contact #facebook_logo {
+}
+#contact #instagram_logo {
+}
