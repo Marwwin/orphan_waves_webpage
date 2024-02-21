@@ -105,6 +105,23 @@ h3 {
   font-weight: bolder;
   white-space: nowrap;
 }
+
+#gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5vw 0em;
+  background-color: var(--ultraviolet);
+}
+#gallery .band_member_image {
+  width: 30%;
+  margin: 0em 1vw;
+}
+#gallery .band_member_image img {
+  width: -moz-available;
+  width: -webkit-fill-available;
+}
 #gigs {
   display: flex;
   flex-direction: column;
@@ -146,13 +163,12 @@ h3 {
   align-items: center;
 }
 
-@media (max-width: 380px){
- #contact .mail_link {
-  margin-top: 1.5em;
-  white-space:nowrap;
-  font-size: 1em;
-}
-   
+@media (max-width: 380px) {
+  #contact .mail_link {
+    margin-top: 1.5em;
+    white-space: nowrap;
+    font-size: 1em;
+  }
 }
 
 @media (max-width: 250px) {
@@ -166,7 +182,7 @@ h3 {
 
 #contact .mail_link {
   margin-top: 1.5em;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 #contact .social_media_links {
   display: flex;
@@ -176,8 +192,4 @@ h3 {
 
 #contact .logo {
   width: inherit;
-}
-#contact #facebook_logo {
-}
-#contact #instagram_logo {
 }
