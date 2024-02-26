@@ -64,7 +64,7 @@ h3 {
 }
 #album h2 {
   text-align: center;
-  font-size: xxx-large;
+  font-size: min(3em,6vw);
 }
 
 #album_links {
@@ -92,7 +92,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3em max(20vw, 4em);
+  padding: 1em max(20vw, 4em);
   color: whitesmoke;
   background-color: var(--ultraviolet);
   font-size: larger;
