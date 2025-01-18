@@ -1,10 +1,18 @@
 :root {
-  --amethyst: #856fc0ff;
-  --coolgray: #8283a6ff;
-  --ultraviolet: #594582ff;
-  --plumbweb: #df8cd4ff;
-}
+  --primary-color:           var(--theme-persona-primary);
+  --secondary-color:         var(--theme-persona-tertiary);
+  --tertiary-color:          var(--theme-persona-secondary);
+  --accent-1:                var(--theme-persona-accent-1);
+  --accent-2:                var(--theme-persona-accent-2);
+  --text-color:              var(--theme-persona-text);
 
+  --theme-persona-primary:   #594582ff;
+  --theme-persona-secondary: #856fc0ff;
+  --theme-persona-tertiary:  #df8cd4ff;
+  --theme-persona-accent-1:  #eedfee;
+  --theme-persona-accent-2:  #845d9dff;
+  --theme-persona-text:      whitesmoke;
+}
 @font-face {
   font-family: "TimeBurner";
   src: url("./assets/Timeburner-xJB8.ttf") format("truetype");
@@ -18,25 +26,28 @@
 html {
   font-family: "TimeBurner";
 }
+
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
+
 header {
   background: radial-gradient(
     circle,
-    rgb(80, 62, 127) 0%,
-    rgb(132, 93, 157) 60%,
-    rgb(222, 161, 215) 100%
+    var(--primary-color) 0%,
+    var(--accent-2) 60%,
+    var(--secondary-color) 100%
   );
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 header #the_header {
-  display:none;
+  display: none;
 }
 
 header img {
@@ -49,26 +60,28 @@ header img {
 h2 {
   font-family: "TimeBurner bold";
 }
+
 h3 {
   font-family: "TimeBurner bold";
 }
 
 #album {
-  color: whitesmoke;
+  color: var(--text-color);
   background: radial-gradient(
     circle,
-    rgb(80, 62, 127) 0%,
-    rgb(218, 144, 208) 80%,
-    rgb(238, 223, 238) 100%
+    var(--primary-color) 0%,
+    var(--secondary-color) 80%,
+    var(--accent-1) 100%
   );
   padding: 2em 2em 4em;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 #album h2 {
   text-align: center;
-  font-size: min(3em,6vw);
+  font-size: min(3em, 6vw);
 }
 
 #album_links {
@@ -91,16 +104,18 @@ h3 {
   aspect-ratio: 1 / 1;
   width: max(35vw, 20em);
 }
+
 #about {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1em max(20vw, 4em);
-  color: whitesmoke;
-  background-color: var(--ultraviolet);
+  color: var(--text-color);
+  background-color: var(--primary-color);
   font-size: larger;
 }
+
 #about p {
   width: min(94vw, 28em);
 }
@@ -116,16 +131,19 @@ h3 {
   justify-content: center;
   align-items: center;
   padding: 0.5vw 0em;
-  background-color: var(--ultraviolet);
+  background-color: var(--primary-color);
 }
+
 #gallery .band_member_image {
   width: 30%;
   margin: 0em 1vw;
 }
+
 #gallery .band_member_image img {
   width: -moz-available;
   width: -webkit-fill-available;
 }
+
 #gigs {
   display: flex;
   flex-direction: column;
@@ -134,7 +152,7 @@ h3 {
   padding-top: 2em;
   padding-bottom: 7em;
   color: #f5f5f5;
-  background-color: var(--ultraviolet);
+  background-color: var(--primary-color);
 }
 
 .gig {
@@ -147,17 +165,18 @@ h3 {
 
 #contact {
   display: flex;
-  color: whitesmoke;
-  background-color: var(--amethyst);
+  color: var(--text-color);
+  background-color: var(--tertiary-color);
   justify-content: center;
   align-items: center;
   min-height: 20vh;
   flex-direction: column;
   padding-bottom: 2em;
 }
+
 #contact a {
   text-decoration: none;
-  color: whitesmoke;
+  color: var(--text-color);
   font-size: x-large;
 }
 
@@ -188,6 +207,7 @@ h3 {
   margin-top: 1.5em;
   white-space: nowrap;
 }
+
 #contact .social_media_links {
   display: flex;
   width: 1.5em;
@@ -198,6 +218,6 @@ h3 {
   width: inherit;
 }
 
-.font_bolder{
-    font-weight: bolder
+.font_bolder {
+  font-weight: bolder;
 }
