@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" style="">
+<html class="theme-keel" lang="en" style="">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -15,34 +15,16 @@
     <script src="./htmx.min.js"></script>
   </head>
   <body>
+    <div id="background"></div>
+    <div id='content_container'>
     <header>
-      <h1 id="the_header">Orphan Waves Home Page</h1>
       <img alt="Orphan Waves band logo" src="./assets/logo_white.png" />
     </header>
-    <section id="album" style="">
-      <h2>New EP "Persona" Out Now!</h2>
-      <img
-        id="persona_album"
-        alt="Persona album cover"
-        src="./assets/persona_small.jpeg"
-      />
-      <div id="album_links">
-        <a
-          href="https://open.spotify.com/album/6QW6mXroON0hVTL11Cs1W3?si=Ral12uJJSRm6-NhLUU7G4Q"
-          ><img
-            id="spotify_logo"
-            alt="Spotify logo"
-            src="./assets/Spotify_Logo_CMYK_White.png"
-        /></a>
-        <a
-          href="https://youtube.com/playlist?list=OLAK5uy_ljdsq_2qV6PJRS0HjoIgHeiPVklb_qROY&si=TnnYfR7aE1RUYK_k"
-        >
-          <img
-            id="youtube_logo"
-            alt="Youtube logo"
-            src="assets/yt_logo_mono_dark.png"
-        /></a>
-      </div>
+    <section id="album"
+      hx-get="/album/0"
+      hx-trigger="load"
+      hx-target="#album"
+      hx-swap="outerHTML" >
     </section>
     <section id="about">
       <h2>About</h2>
@@ -123,6 +105,17 @@
           /></a>
         </div>
       </div>
-    </section>
+    </section></div>
   </body>
+  <script>
+  document.addEventListener("htmx:afterSettle", (e) => {
+    const newContent = e.detail.elt;
+    if (newContent.id === "album"){
+      const newTheme = newContent.getAttribute('data-theme')
+      if (newTheme){
+        document.documentElement.className = newTheme
+      }
+    }
+  })
+  </script>
 </html>

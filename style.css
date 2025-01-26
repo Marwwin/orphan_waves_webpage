@@ -1,18 +1,68 @@
-:root {
-  --primary-color:           var(--theme-persona-primary);
-  --secondary-color:         var(--theme-persona-tertiary);
-  --tertiary-color:          var(--theme-persona-secondary);
-  --accent-1:                var(--theme-persona-accent-1);
-  --accent-2:                var(--theme-persona-accent-2);
-  --text-color:              var(--theme-persona-text);
-
-  --theme-persona-primary:   #594582ff;
-  --theme-persona-secondary: #856fc0ff;
-  --theme-persona-tertiary:  #df8cd4ff;
-  --theme-persona-accent-1:  #eedfee;
-  --theme-persona-accent-2:  #845d9dff;
-  --theme-persona-text:      whitesmoke;
+.theme-keel {
+  --primary-color: #413332;
+  --secondary-color: #495392ff;
+  --tertiary-color: #b39d86;
+  --accent-1: #38272d;
+  --accent-2: #47509b;
+  --text-color-primary: whitesmoke;
+  --text-color-secondary: black;
 }
+
+.theme-persona {
+  --primary-color: #594582ff;
+  --secondary-color: #856fc0ff;
+  --tertiary-color: #df8cd4ff;
+  --accent-1: #583d8e;
+  --accent-2: #c2bed2;
+  --text-color-primary: whitesmoke;
+  --text-color-secondary: black;
+}
+
+.theme-caveat {
+  --primary-color: #332166ff;
+  --secondary-color: #613c6aff;
+  --tertiary-color: #efb44aff;
+  --accent-1: #2a184cff;
+  --accent-2: #87293aff;
+  --text-color-primary: whitesmoke;
+  --text-color-secondary: black;
+}
+
+.theme-soirée {
+  --primary-color: #313632;
+  --secondary-color: #822c4c;
+  --tertiary-color: #52534dff;
+  --accent-1: #0d0d0f;
+  --accent-2: #7b7b7b;
+  --text-color-primary: whitesmoke;
+  --text-color-secondary: black;
+}
+
+* {
+  transition:
+    background-color 1s ease-in-out,
+    color 1s ease-in-out,
+    border-color 1s ease-in-out;
+}
+
+@property --accent-1 {
+  syntax: "<color>";
+  initial-value: #594582ff;
+  inherits: true;
+}
+
+@property --secondary-color {
+  syntax: "<color>";
+  initial-value: #856fc0ff;
+  inherits: true;
+}
+
+@property --accent-2 {
+  syntax: "<color>";
+  initial-value: #df8cd4ff;
+  inherits: true;
+}
+
 @font-face {
   font-family: "TimeBurner";
   src: url("./assets/Timeburner-xJB8.ttf") format("truetype");
@@ -35,12 +85,8 @@ body {
 }
 
 header {
-  background: radial-gradient(
-    circle,
-    var(--primary-color) 0%,
-    var(--accent-2) 60%,
-    var(--secondary-color) 100%
-  );
+  z-index: 1;
+  background-color: #0000002e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +97,6 @@ header #the_header {
 }
 
 header img {
-  padding: 0;
   margin: 0;
   max-height: 6em;
   width: min(100vw, 26em);
@@ -65,23 +110,48 @@ h3 {
   font-family: "TimeBurner bold";
 }
 
-#album {
-  color: var(--text-color);
+#background{
+  position: absolute;
   background: radial-gradient(
-    circle,
-    var(--primary-color) 0%,
-    var(--secondary-color) 80%,
-    var(--accent-1) 100%
+    circle at 50% 60%,
+    var(--accent-1) 0%,
+    var(--secondary-color) 60%,
+    var(--accent-2) 100%
   );
-  padding: 2em 2em 4em;
+  height:100vh;
+  width: 100vw;
+  transition:
+    --accent-1 1s ease-in-out,
+    --secondary-color 1s ease-in-out,
+    --accent-2 1s ease-in-out;
+}
+
+#content_container {
+  z-index: 10;
+}
+
+#album {
+  color: var(--text-color-primary);
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  height: calc(100vh - 6em);
 }
 
 #album h2 {
   text-align: center;
   font-size: min(3em, 6vw);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album_container{
+ display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 }
 
 #album_links {
@@ -100,18 +170,105 @@ h3 {
   padding: 2em;
 }
 
-#album #persona_album {
-  aspect-ratio: 1 / 1;
-  width: max(35vw, 20em);
+#album_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+#album_cover {
+  position: relative;
+  width: max(35vw, 20em);
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#album_cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s;
+}
+
+#album_info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#album_cover:hover #album_info {
+  opacity: 1;
+}
+
+#album_info h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#album_info ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+#album_info ul li {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+#album_links {
+  display: flex;
+  margin-top: 1rem;
+}
+
+#album_links a {
+  margin: 0 0.5rem;
+}
+
+#album_links img {
+  max-height: 2rem;
+}
+.arrow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.arrow.left {
+  left: 10vw;
+}
+
+.arrow.right {
+  right: 10vw;
+}
+
+#album .arrow {
+  display: block;
+}
 #about {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1em max(20vw, 4em);
-  color: var(--text-color);
+  color: var(--text-color-primary);
   background-color: var(--primary-color);
   font-size: larger;
 }
@@ -165,7 +322,7 @@ h3 {
 
 #contact {
   display: flex;
-  color: var(--text-color);
+  color: var(--text-color-primary);
   background-color: var(--tertiary-color);
   justify-content: center;
   align-items: center;
@@ -176,7 +333,7 @@ h3 {
 
 #contact a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--text-color-primary);
   font-size: x-large;
 }
 
