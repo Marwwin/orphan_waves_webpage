@@ -93,7 +93,6 @@ const app = http.createServer(async (req, res) => {
    *  Endpoints
    **/
   const url = req.url.split("/");
-  console.log(url);
 
   if (url[1] === "album") {
     res.writeHead(200, { "Content-Type": "text/html" });
@@ -195,8 +194,8 @@ const app = http.createServer(async (req, res) => {
   }
 });
 
-app.listen(3002, "localhost", () => {
-  console.log("running on", 3002);
+app.listen(3001, "localhost", () => {
+  console.log("running on", 3001);
 });
 
 function createAlbum(index) {
@@ -205,7 +204,6 @@ function createAlbum(index) {
   const header =
     newestAlbum === album.year ? `New EP "${album.name}" Out Now!` : album.name;
   const limit = albums.length - 1;
-  console.log(album.tracks);
 
   return `
     <section id="album" data-theme="theme-${album.name.toLowerCase()}">
