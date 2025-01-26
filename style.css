@@ -248,6 +248,7 @@ h3 {
   font-size: 30px;
   cursor: pointer;
   display: none;
+  z-index: 20;
 }
 
 .arrow.left {
