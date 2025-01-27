@@ -178,16 +178,21 @@ h3 {
 
 #album_cover {
   position: relative;
-  width: max(35vw, 20em);
+  width: min(60vh, 60vw);
   aspect-ratio: 1 / 1;
   border-radius: 8px;
   overflow: hidden;
 }
 
-#album_cover img {
+#album_cover_img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity:1;
+  transition: opacity 500ms ease-in-out;
+}
+ #album_cover_img.loading {
+  opacity:0;
 }
 
 #album_info {
@@ -200,36 +205,49 @@ h3 {
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
+#album_info_info_text {
+  display: flex;
+}
 #album_cover:hover #album_info {
   opacity: 1;
 }
+#album_info #track_container  {
+  margin-bottom: 1em;
+}
 
-#album_info h3 {
+#album_info #track_container h3 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  text-align: left;
+}
+
+#album_info ol {
+  padding: 0;
+  text-align: left;
 }
 
 #album_info ul {
   list-style-type: none;
   padding: 0;
-  text-align: center;
+  text-align: left;
+  margin-bottom: 0;
 }
 
-#album_info ul li {
+#album_info ol li {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  margin-left: 0.4rem;
 }
 
 #album_links {
   display: flex;
-  margin-top: 1rem;
 }
 
 #album_links a {

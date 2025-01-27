@@ -18,6 +18,7 @@
     <div id="background"></div>
     <div id='content_container'>
     <header>
+        <h1 id="the_header">Orphan Waves</h1>
       <img alt="Orphan Waves band logo" src="./assets/logo_white.png" />
     </header>
     <section id="album"
@@ -116,6 +117,11 @@
         document.documentElement.className = newTheme
       }
     }
+  })
+
+  document.addEventListener("htmx:beforeRequest", (e)=>{
+    const album = document.querySelector("#album_cover_img")
+    album.className = "loading"
   })
   </script>
 </html>
